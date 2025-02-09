@@ -13,17 +13,11 @@
         h1 {
             color: red;
             font-size: 40px;
-            margin-top: 30px;
+            margin-top: 50px;
         }
         p {
             font-size: 24px;
-        }
-        .cinnamoroll {
-            width: 200px;
-            transition: transform 0.5s ease-in-out;
-        }
-        .cinnamoroll:hover {
-            transform: scale(1.1);
+            margin-bottom: 30px;
         }
         .btn {
             padding: 15px 30px;
@@ -32,21 +26,21 @@
             border: 2px solid red;
             border-radius: 10px;
             cursor: pointer;
-            margin: 20px;
-            transition: 0.3s;
             position: absolute;
+            transition: 0.3s;
         }
         .btn:hover {
             background-color: red;
             color: white;
         }
+        /* Updated button positions */
         #yes-btn {
-            left: 45%;
-            top: 60%;
+            left: 42%;
+            top: 50%;
         }
         #no-btn {
             left: 55%;
-            top: 60%;
+            top: 50%;
         }
         #response {
             display: none;
@@ -66,11 +60,11 @@
 </head>
 <body>
 
-    <h1>Please be my valentine. 💕</h1>
-
+    <h1>Will you be my Valentine? 💕</h1>
+    
     <p>Click below to answer:</p>
     
-    <!-- Buttons -->
+    <!-- Buttons (moved higher) -->
     <button class="btn" id="yes-btn" onclick="showResponse(true)">Yes 💖</button>
     <button class="btn" id="no-btn" onmouseover="moveButton()">No 😢</button>
 
@@ -86,7 +80,7 @@
             let hearts = document.getElementById("hearts");
             
             if (isYes) {
-                response.innerHTML = "I love you, my favorite nerd.";
+                response.innerHTML = "Yay! I knew you would say yes! 💖";
                 response.style.color = "red";
                 startHearts();
             }
@@ -96,7 +90,7 @@
 
         function moveButton() {
             let noBtn = document.getElementById("no-btn");
-            let newX = Math.random() * (window.innerWidth - 100); // Adjusts to screen size
+            let newX = Math.random() * (window.innerWidth - 100);
             let newY = Math.random() * (window.innerHeight - 100);
             
             noBtn.style.left = `${newX}px`;
